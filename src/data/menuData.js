@@ -750,13 +750,6 @@ export const MENU_ITEMS = {
         description: 'Tequila, triple seco y zumo de lima servido en copa encostrada de sal.'
       },
       {
-        id: 'margarita_clasica_frozen',
-        name: 'Margarita Clásica Frozen',
-        price: '7,50 €',
-        numericPrice: 7.5,
-        description: 'Nuestra margarita clásica frappé helada súper refrescante.'
-      },
-      {
         id: 'margarita_sabores',
         name: 'Margarita de Sabores',
         price: '8,00 €',
