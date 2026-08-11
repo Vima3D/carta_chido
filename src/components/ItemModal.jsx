@@ -1,5 +1,5 @@
-import React from 'react';
-import { X, Flame, Leaf, Star } from 'lucide-react';
+import React from "react";
+import { X, Flame, Leaf, Star } from "lucide-react";
 
 export default function ItemModal({ item, sectionColor, onClose }) {
   if (!item) return null;
@@ -8,7 +8,7 @@ export default function ItemModal({ item, sectionColor, onClose }) {
     <div className="modal-overlay" onClick={onClose}>
       <div
         className="modal-content"
-        style={{ '--modal-accent': sectionColor || 'var(--chido-red)' }}
+        style={{ "--modal-accent": sectionColor || "var(--chido-red)" }}
         onClick={(e) => e.stopPropagation()}
       >
         <button className="modal-close-btn" onClick={onClose}>
@@ -18,7 +18,7 @@ export default function ItemModal({ item, sectionColor, onClose }) {
         <h3 className="modal-title">{item.name}</h3>
         <div className="modal-price">{item.price}</div>
 
-        <div className="card-badges" style={{ marginBottom: '16px' }}>
+        <div className="card-badges" style={{ marginBottom: "16px" }}>
           {item.recommended && (
             <span className="badge-tag badge-recommended">
               <Star size={12} fill="#DC2626" /> Recomendado
@@ -31,13 +31,13 @@ export default function ItemModal({ item, sectionColor, onClose }) {
             </span>
           )}
 
-          {item.spicy === 'low' && (
+          {item.spicy === "low" && (
             <span className="badge-tag badge-spicy-low">
               <Flame size={12} color="#CA8A04" /> Picante bajo
             </span>
           )}
 
-          {item.spicy === 'medium' && (
+          {item.spicy === "medium" && (
             <span className="badge-tag badge-spicy-medium">
               <Flame size={12} color="#EA580C" /> Picante medio
             </span>
