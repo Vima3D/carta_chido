@@ -1,18 +1,24 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Header from "../components/Header";
 import TopNavFood from "../components/TopNavFood";
 import BottomNavDrink from "../components/BottomNavDrink";
 import MenuItemCard from "../components/MenuItemCard";
 import ItemModal from "../components/ItemModal";
+import ScrollToTop from "../components/ScrollToTop";
 
 import {
   FOOD_CATEGORIES,
   DRINK_CATEGORIES,
   MENU_ITEMS,
+  getSectionTitle,
+  getSectionSubtitle,
+  getSectionExtras,
 } from "../data/menuData";
-import { PlusCircle, SearchX } from "lucide-react";
+import { PlusCircle } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function MenuPage() {
+  const { lang, t } = useLanguage();
   const [activeSection, setActiveSection] = useState("nachos");
   const [searchTerm, setSearchTerm] = useState("");
   const [activeFilter, setActiveFilter] = useState("all");
@@ -38,14 +44,16 @@ export default function MenuPage() {
     if (!items) return [];
 
     const isDrinkCategory = DRINK_CATEGORIES.some((c) => c.id === categoryId);
+    const query = searchTerm.trim().toLowerCase();
 
     return items.filter((item) => {
-      // Search term filter applies to all items
+      // Search term filter applies to Spanish & English fields
       const matchesSearch =
-        searchTerm.trim() === "" ||
-        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (item.description &&
-          item.description.toLowerCase().includes(searchTerm.toLowerCase()));
+        query === "" ||
+        item.name.toLowerCase().includes(query) ||
+        (item.description && item.description.toLowerCase().includes(query)) ||
+        (item.en?.name && item.en.name.toLowerCase().includes(query)) ||
+        (item.en?.description && item.en.description.toLowerCase().includes(query));
 
       if (!matchesSearch) return false;
 
@@ -65,7 +73,7 @@ export default function MenuPage() {
 
   return (
     <div className="app-container">
-      {/* HEADER WITH SEARCH & FILTERS */}
+      {/* HEADER WITH SEARCH, FILTERS & LANGUAGE SWITCHER */}
       <Header
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -92,6 +100,10 @@ export default function MenuPage() {
             return null;
           }
 
+          const sectionTitle = getSectionTitle(categoryData, lang);
+          const sectionSubtitle = getSectionSubtitle(categoryData, lang);
+          const sectionExtras = getSectionExtras(categoryData, lang);
+
           return (
             <section
               key={cat.id}
@@ -105,10 +117,10 @@ export default function MenuPage() {
                 style={{ "--section-color": cat.color }}
               >
                 <h2 className="section-title">
-                  {cat.icon} {categoryData.title}
+                  {cat.icon} {sectionTitle}
                 </h2>
-                {categoryData.subtitle && (
-                  <p className="section-subtitle">{categoryData.subtitle}</p>
+                {sectionSubtitle && (
+                  <p className="section-subtitle">{sectionSubtitle}</p>
                 )}
               </div>
 
@@ -127,18 +139,18 @@ export default function MenuPage() {
               </div>
 
               {/* EXTRAS OR SIDES BOX IF PRESENT */}
-              {categoryData.extras &&
-                categoryData.extras.length > 0 &&
+              {sectionExtras &&
+                sectionExtras.length > 0 &&
                 !isSearchingOrFiltering && (
                   <div
                     className="extras-box"
                     style={{ "--section-color": cat.color }}
                   >
                     <h4 className="extras-title">
-                      <PlusCircle size={18} /> Extras & Complementos
+                      <PlusCircle size={18} /> {t.extrasTitle}
                     </h4>
                     <div className="extras-grid">
-                      {categoryData.extras.map((extra, idx) => (
+                      {sectionExtras.map((extra, idx) => (
                         <div key={idx} className="extra-item">
                           <span>{extra.name}</span>
                           <span className="extra-price">{extra.price}</span>
@@ -162,13 +174,8 @@ export default function MenuPage() {
           }) && (
             <div className="no-results">
               <div className="no-results-icon">🌮🔍</div>
-              <h3 className="no-results-title">
-                No encontramos platillos o bebidas
-              </h3>
-              <p style={{ color: "var(--text-muted)" }}>
-                Prueba a modificar la búsqueda o a borrar los filtros de
-                selección.
-              </p>
+              <h3 className="no-results-title">{t.noResultsTitle}</h3>
+              <p style={{ color: "var(--text-muted)" }}>{t.noResultsText}</p>
             </div>
           )}
       </main>
@@ -188,13 +195,16 @@ export default function MenuPage() {
         onSelectCategory={handleSelectCategory}
       />
 
+      {/* FLOATING SCROLL TO TOP BUTTON */}
+      <ScrollToTop />
+
       {/* FOOTER */}
       <footer className="app-footer">
         <p>
           <strong>CHIDO MEXICANO & CHINGÓN</strong> © {new Date().getFullYear()}
         </p>
         <p style={{ fontSize: "0.78rem", marginTop: "4px" }}>
-          ¡Buen Provecho! Disfruta de la mejor comida y coctelería mexicana.
+          {t.footerTagline}
         </p>
       </footer>
     </div>
