@@ -75,12 +75,12 @@ export const DRINK_CATEGORIES = [
     en: { name: "Beers", badge: "Ice Cold" },
   },
   {
-    id: "tequilas",
-    name: "Tequilas",
-    icon: "🌵",
-    badge: "Jalisco & Oaxaca",
-    color: "#B45309",
-    en: { name: "Tequilas", badge: "Jalisco & Oaxaca" },
+    id: "margaritas",
+    name: "Margaritas",
+    icon: "🍸",
+    badge: "Frozen o Clásicas",
+    color: "#059669",
+    en: { name: "Margaritas", badge: "Frozen or Classic" },
   },
   {
     id: "cocteles",
@@ -99,28 +99,28 @@ export const DRINK_CATEGORIES = [
     en: { name: "Soft Drinks", badge: "Refreshing" },
   },
   {
-    id: "micheladas",
-    name: "Micheladas",
-    icon: "🌶️",
-    badge: "Con Clamato / Lima",
-    color: "#DC2626",
-    en: { name: "Micheladas", badge: "With Clamato / Lime" },
-  },
-  {
-    id: "margaritas",
-    name: "Margaritas",
-    icon: "🍸",
-    badge: "Frozen o Clásicas",
-    color: "#059669",
-    en: { name: "Margaritas", badge: "Frozen or Classic" },
-  },
-  {
     id: "limonadas",
     name: "Limonadas",
     icon: "🍋",
     badge: "Sin Alcohol",
     color: "#CA8A04",
     en: { name: "Lemonades", badge: "Non-Alcoholic" },
+  },
+  {
+    id: "tequilas",
+    name: "Tequilas",
+    icon: "🌵",
+    badge: "Jalisco & Oaxaca",
+    color: "#B45309",
+    en: { name: "Tequilas", badge: "Jalisco & Oaxaca" },
+  },
+  {
+    id: "micheladas",
+    name: "Micheladas",
+    icon: "🌶️",
+    badge: "Con Clamato / Lima",
+    color: "#DC2626",
+    en: { name: "Micheladas", badge: "With Clamato / Lime" },
   },
 ];
 
@@ -719,8 +719,7 @@ export const MENU_ITEMS = {
     accentColor: "#2E4A9E",
     en: {
       title: "STREET SNACKS",
-      subtitle:
-        "Street-food appetizers loaded with authentic Mexican flavor",
+      subtitle: "Street-food appetizers loaded with authentic Mexican flavor",
     },
     items: [
       {
@@ -821,7 +820,10 @@ export const MENU_ITEMS = {
       subtitle:
         "Our flavorful Burrito Bowls. Turn your bowl into burritos/tacos with 2 extra tortillas for +€1.80!",
       extras: [
-        { name: "+2 Wheat Tortillas (20cm) to roll your bowl", price: "1,80 €" },
+        {
+          name: "+2 Wheat Tortillas (20cm) to roll your bowl",
+          price: "1,80 €",
+        },
       ],
     },
     items: [
@@ -953,7 +955,8 @@ export const MENU_ITEMS = {
         description: "Tortilla de trigo con tomate, jamón y queso fundido.",
         en: {
           name: "Quesapizza",
-          description: "Wheat tortilla filled with tomato sauce, ham, and melted cheese.",
+          description:
+            "Wheat tortilla filled with tomato sauce, ham, and melted cheese.",
         },
       },
       {
@@ -965,7 +968,8 @@ export const MENU_ITEMS = {
           "Crujientes nuggets de pollo acompanados de patatas fritas doradas.",
         en: {
           name: "Chicken Nuggets with French Fries",
-          description: "Crispy chicken nuggets served with golden French fries.",
+          description:
+            "Crispy chicken nuggets served with golden French fries.",
         },
       },
     ],
@@ -990,7 +994,8 @@ export const MENU_ITEMS = {
         recommended: true,
         en: {
           name: "Cheesecake with Mexican Caramel (Cajeta)",
-          description: "Creamy cheesecake drizzled with melted warm Mexican cajeta caramel.",
+          description:
+            "Creamy cheesecake drizzled with melted warm Mexican cajeta caramel.",
         },
       },
       {
@@ -1001,7 +1006,8 @@ export const MENU_ITEMS = {
         description: "Pura crema de cacao sobre una base golosa crujiente.",
         en: {
           name: "Nutella Tart",
-          description: "Rich hazelnut chocolate cream over a crispy cookie crust.",
+          description:
+            "Rich hazelnut chocolate cream over a crispy cookie crust.",
         },
       },
       {
@@ -1054,7 +1060,8 @@ export const MENU_ITEMS = {
         recommended: true,
         en: {
           name: "Pistachio Cheesecake",
-          description: "Creamy baked cheesecake crafted with authentic pistachio paste.",
+          description:
+            "Creamy baked cheesecake crafted with authentic pistachio paste.",
         },
       },
       {
@@ -1138,7 +1145,13 @@ export const MENU_ITEMS = {
         numericPrice: 3.9,
         en: { name: "Desperados Beer" },
       },
-      { id: "pacifico", name: "Pacífico", price: "4,90 €", numericPrice: 4.9, en: { name: "Pacífico Beer" } },
+      {
+        id: "pacifico",
+        name: "Pacífico",
+        price: "4,90 €",
+        numericPrice: 4.9,
+        en: { name: "Pacífico Beer" },
+      },
       {
         id: "modelo_especial",
         name: "Modelo Especial",
@@ -1222,7 +1235,8 @@ export const MENU_ITEMS = {
           "Lima, azúcar, vodka de manzana, zumo de naranja, Malibú y maracuyá.",
         en: {
           name: "La Bamba",
-          description: "Lime, sugar, apple vodka, orange juice, Malibu rum, and passion fruit.",
+          description:
+            "Lime, sugar, apple vodka, orange juice, Malibu rum, and passion fruit.",
         },
       },
       {
@@ -1234,7 +1248,8 @@ export const MENU_ITEMS = {
         recommended: true,
         en: {
           name: "Strawberry Mezcalito",
-          description: "Mezcal, fresh strawberries, and lime. Simple, tasty, and dangerously good.",
+          description:
+            "Mezcal, fresh strawberries, and lime. Simple, tasty, and dangerously good.",
         },
       },
       {
@@ -1271,7 +1286,8 @@ export const MENU_ITEMS = {
           "Ron blanco Barceló, piña natural, crema de coco y mucho molo.",
         en: {
           name: "Frozen Piña Colada",
-          description: "Barceló white rum, natural pineapple juice, coconut cream, blended with ice.",
+          description:
+            "Barceló white rum, natural pineapple juice, coconut cream, blended with ice.",
         },
       },
       {
@@ -1335,7 +1351,8 @@ export const MENU_ITEMS = {
           "Lima, hojas de menta, azúcar moreno, ron blanco y TOP sprite.",
         en: {
           name: "Classic Mojito",
-          description: "Lime, fresh mint leaves, brown sugar, white rum, topped with Sprite.",
+          description:
+            "Lime, fresh mint leaves, brown sugar, white rum, topped with Sprite.",
         },
       },
       {
@@ -1347,7 +1364,8 @@ export const MENU_ITEMS = {
           "Elegir Fresa, fruta de la pasión, coco, tamarindo o sandía.",
         en: {
           name: "Flavored Mojito",
-          description: "Choice of flavors: Strawberry, passion fruit, coconut, tamarind, or watermelon.",
+          description:
+            "Choice of flavors: Strawberry, passion fruit, coconut, tamarind, or watermelon.",
         },
       },
     ],
@@ -1452,7 +1470,8 @@ export const MENU_ITEMS = {
           "Cerveza muy fría, jugo de lima, jugo maggi, perrins y valentina.",
         en: {
           name: "Classic Michelada",
-          description: "Chilled beer, fresh lime juice, Maggi sauce, Worcestershire, and Valentina hot sauce.",
+          description:
+            "Chilled beer, fresh lime juice, Maggi sauce, Worcestershire, and Valentina hot sauce.",
         },
       },
       {
@@ -1471,7 +1490,8 @@ export const MENU_ITEMS = {
         recommended: true,
         en: {
           name: "Chingona Clamato Michelada",
-          description: "Ice-cold beer, lime juice, Maggi, Worcestershire, Valentina hot sauce, and Clamato tomato juice.",
+          description:
+            "Ice-cold beer, lime juice, Maggi, Worcestershire, Valentina hot sauce, and Clamato tomato juice.",
           options: [
             { name: "With Corona", price: "6,00 €" },
             { name: "With Pacífico", price: "7,00 €" },
@@ -1489,7 +1509,8 @@ export const MENU_ITEMS = {
           "Cerveza muy fría servida con zumo de limón recién exprimido y borde con sal.",
         en: {
           name: "Lime Chelada",
-          description: "Ice-cold beer served with fresh squeezed lime juice and a salted rim.",
+          description:
+            "Ice-cold beer served with fresh squeezed lime juice and a salted rim.",
         },
       },
     ],
@@ -1502,7 +1523,8 @@ export const MENU_ITEMS = {
     accentColor: "#059669",
     en: {
       title: "MARGARITAS FOR THE SOUL",
-      subtitle: "Served with a smile or by the pitcher! Order a 1/2L or 1L pitcher to share!",
+      subtitle:
+        "Served with a smile or by the pitcher! Order a 1/2L or 1L pitcher to share!",
     },
     items: [
       {
@@ -1514,7 +1536,8 @@ export const MENU_ITEMS = {
           "Tequila, triple seco y zumo de lima servido en copa encostrada de sal.",
         en: {
           name: "Classic Margarita Glass",
-          description: "Tequila, triple sec, and lime juice served in a salt-rimmed glass.",
+          description:
+            "Tequila, triple sec, and lime juice served in a salt-rimmed glass.",
         },
       },
       {
@@ -1526,7 +1549,8 @@ export const MENU_ITEMS = {
           "Elige tu sabor: Fresa, fruta de la pasión, coco, tamarindo o sandía.",
         en: {
           name: "Flavored Margarita Glass",
-          description: "Choice of flavor: Strawberry, passion fruit, coconut, tamarind, or watermelon.",
+          description:
+            "Choice of flavor: Strawberry, passion fruit, coconut, tamarind, or watermelon.",
         },
       },
       {
@@ -1617,7 +1641,8 @@ export const MENU_ITEMS = {
         description: "Limón, azúcar líquida, fruta de la pasión y soda.",
         en: {
           name: "Passion Fruit Lemonade",
-          description: "Fresh lemon, passion fruit puree, liquid sugar, and soda.",
+          description:
+            "Fresh lemon, passion fruit puree, liquid sugar, and soda.",
         },
       },
       {
