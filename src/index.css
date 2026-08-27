@@ -1307,10 +1307,15 @@ body {
   justify-content: center;
   color: #b0a595;
   cursor: grab;
-  padding: 4px;
+  padding: 6px 10px;
+  margin-left: -4px;
   border-radius: 6px;
   transition: color 0.15s ease, background 0.15s ease;
   flex-shrink: 0;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 .drag-handle:hover,
 .order-item-row:hover .drag-handle {
