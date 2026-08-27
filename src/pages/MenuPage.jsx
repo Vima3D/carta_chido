@@ -5,6 +5,8 @@ import BottomNavDrink from "../components/BottomNavDrink";
 import MenuItemCard from "../components/MenuItemCard";
 import ItemModal from "../components/ItemModal";
 import ScrollToTop from "../components/ScrollToTop";
+import OrderFloatingButton from "../components/OrderFloatingButton";
+import OrderListModal from "../components/OrderListModal";
 
 import {
   FOOD_CATEGORIES,
@@ -23,6 +25,7 @@ export default function MenuPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeFilter, setActiveFilter] = useState("all");
   const [selectedItem, setSelectedItem] = useState(null);
+  const [isOrderListOpen, setIsOrderListOpen] = useState(false);
 
   const sectionRefs = useRef({});
 
@@ -180,6 +183,13 @@ export default function MenuPage() {
           )}
       </main>
 
+      {/* ORDER SELECTION LIST MODAL */}
+      <OrderListModal
+        isOpen={isOrderListOpen}
+        onClose={() => setIsOrderListOpen(false)}
+        onSelectItem={(item) => setSelectedItem(item)}
+      />
+
       {/* ITEM DETAIL MODAL */}
       {selectedItem && (
         <ItemModal
@@ -188,6 +198,9 @@ export default function MenuPage() {
           onClose={() => setSelectedItem(null)}
         />
       )}
+
+      {/* FLOATING ORDER LIST BUTTON */}
+      <OrderFloatingButton onOpenList={() => setIsOrderListOpen(true)} />
 
       {/* BOTTOM NAVIGATION BAR (7 DRINK BUTTONS) */}
       <BottomNavDrink

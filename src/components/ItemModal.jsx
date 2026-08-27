@@ -1,11 +1,17 @@
-import React from "react";
-import { X, Flame, Leaf, Star } from "lucide-react";
+import React, { useState } from "react";
+import { X, Flame, Leaf, Star, Plus, Minus, Check, ClipboardList } from "lucide-react";
 import { getItemName, getItemDescription, getItemOptions } from "../data/menuData";
 import { useLanguage } from "../context/LanguageContext";
+import { useOrder } from "../context/OrderContext";
 import { getDishImage } from "../utils/dishImages";
 
 export default function ItemModal({ item, sectionColor, onClose }) {
   const { lang, t } = useLanguage();
+  const { addToOrder, getItemQuantity } = useOrder();
+  
+  const initialQty = item ? getItemQuantity(item.id) || 1 : 1;
+  const [modalQty, setModalQty] = useState(initialQty);
+  const [justAdded, setJustAdded] = useState(false);
 
   if (!item) return null;
 
@@ -14,8 +20,17 @@ export default function ItemModal({ item, sectionColor, onClose }) {
   const itemOptions = getItemOptions(item, lang);
   const dishImage = getDishImage(item);
 
+  const handleAddToList = () => {
+    addToOrder(item, modalQty, sectionColor);
+    setJustAdded(true);
+    setTimeout(() => {
+      setJustAdded(false);
+      onClose();
+    }, 600);
+  };
+
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay item-modal-overlay" onClick={onClose}>
       <div
         className={`modal-content ${dishImage ? "has-image" : ""}`}
         style={{ "--modal-accent": sectionColor || "var(--chido-red)" }}
@@ -82,6 +97,42 @@ export default function ItemModal({ item, sectionColor, onClose }) {
               </div>
             </div>
           )}
+
+          {/* ADD TO LIST CONTROLS */}
+          <div className="modal-add-container">
+            <div className="modal-qty-selector">
+              <button
+                className="modal-qty-btn"
+                onClick={() => setModalQty((prev) => Math.max(1, prev - 1))}
+                aria-label="Restar una unidad"
+              >
+                <Minus size={16} />
+              </button>
+              <span className="modal-qty-num">{modalQty}</span>
+              <button
+                className="modal-qty-btn"
+                onClick={() => setModalQty((prev) => prev + 1)}
+                aria-label="Sumar una unidad"
+              >
+                <Plus size={16} />
+              </button>
+            </div>
+
+            <button
+              className={`modal-add-btn ${justAdded ? "added" : ""}`}
+              onClick={handleAddToList}
+            >
+              {justAdded ? (
+                <>
+                  <Check size={18} /> {t.addedToList}
+                </>
+              ) : (
+                <>
+                  <ClipboardList size={18} /> {t.addToList} ({modalQty})
+                </>
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </div>

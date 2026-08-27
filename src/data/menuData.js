@@ -1385,7 +1385,7 @@ export const MENU_ITEMS = {
         { name: "Schweppes Lemon", price: "2,50 €" },
         { name: "Schweppes Orange", price: "2,50 €" },
         { name: "Seven Up", price: "2,50 €" },
-        { name: "Tonic Water", price: "2,50 €" },
+        { name: "Tonic Water", price: "2,90 €" },
       ],
     },
     items: [
@@ -1418,7 +1418,7 @@ export const MENU_ITEMS = {
           { name: "Schwippes de Limón", price: "2,50 €" },
           { name: "Schwippes de Naranja", price: "2,50 €" },
           { name: "Seven Up", price: "2,50 €" },
-          { name: "Tónica", price: "2,50 €" },
+          { name: "Tónica", price: "2,90 €" },
         ],
       },
       {
@@ -1700,4 +1700,21 @@ export function getSectionExtras(section, lang) {
 export function getItemOptions(item, lang) {
   if (lang === "en" && item.en?.options) return item.en.options;
   return item.options;
+}
+
+export function findMenuItemById(itemId) {
+  const allCategories = [...FOOD_CATEGORIES, ...DRINK_CATEGORIES];
+  for (const cat of allCategories) {
+    const categoryData = MENU_ITEMS[cat.id];
+    if (categoryData && categoryData.items) {
+      const found = categoryData.items.find((i) => i.id === itemId);
+      if (found) {
+        return {
+          ...found,
+          sectionColor: cat.color || "var(--chido-red)",
+        };
+      }
+    }
+  }
+  return null;
 }
