@@ -15,67 +15,82 @@ for (const path in rawImages) {
 
 // Explicit mapping of item ID -> filename in platos_img
 const DISH_IMAGE_MAP = {
-  aros_cebolla: "Aros_de_Cebolla.png",
-  burrito_cochinita_deluxe: "Burrito_Cochinita_Delux.jpg",
-  burrito_cochinita_pibil: "Burrito_Cochinita_Pibil.png",
-  burrito_costilla_jack: "Burrito_Costilla.png",
-  burrito_birria: "Burrito_de_Birria.png",
-  burrito_carnitas_carrillera: "Burrito_de_Carrillera.png",
-  burrito_chili_pollo: "Burrito_de_Chili_de_Pollo.png",
-  burrito_pollo_crujiente: "Burrito_de_Pollo_Crujiente.png",
-  burrito_tinga_pollo: "Burrito_de_Tiga_de_Pollo.png",
-  burrito_pulled_pork: "Burrito_Pulled_Pork.png",
-  burrito_vegano: "Burrito_Vegano.png",
-  chingonachos: "Chingonachos.jpg",
-  copa_coco_banana: "Copa_Cajeta.jpg",
-  copa_chocolate_blanco_pistacho: "Copa_Chocolate_Blanco_Pistacho.jpg",
-  copa_kindermania: "Copa_Kindermania.png",
-  degustacion_chingona: "Degustacion_Chingona.png",
-  degustacion_yucateca: "Degustacion_Yukateca.png",
-  desnudo_carnitas: "Desnudo_Carnitas.jpg",
-  desnudo_cochinita: "Desnudo_Cochinita.png",
-  desnudo_costilla: "Desnudo_Costilla.png",
-  desnudo_pato: "Desnudo_Pato.png",
-  desnudo_pollo_crujiente: "Desnudo_Pollo_Crujiente.png",
-  desnudo_pulled_pork: "Desnudo_Pulled.jpg",
-  desnudo_salmon: "Desnudo_Salmon.png",
-  desnudo_tinga_pollo: "Desnudo_Tinga_de_Pollo.png",
-  nachos_guacamoles: "Nachos_con_Guacamole.png",
-  nachos_gratinados_birria: "Nachos_Gratinados_Birria.png",
-  nachos_kimchi: "Nachos_Kimchi.png",
-  naxos: "Naxos.png",
-  nuggets_papas: "Nuggets_con_Papas.png",
-  patatas_brava_chipotle: "Papas_Bravas.png",
-  patacones_tinga: "Patacones_Pollo.png",
-  patacones_salmon: "Patacones_Salmon.png",
-  polvito_oreoguayo: "Polvito_Oreoguayo.png",
-  quesadilla_birria: "Quesadilla_Birria.png",
-  quesadilla_chili_pollo: "Quesadilla_Chili.png",
-  quesadilla_cochinita: "Quesadilla_Cochinita.png",
-  quesadilla_gobernador: "Quesadilla_Gobernador.png",
-  quesadilla_tinga_pollo: "Quesadilla_Tinga_de_Pollo.png",
-  quesadilla_vegetariana: "Quesadilla_Vegetariana.png",
-  quesapizza: "Quesapizza.png",
-  taco_birria_crunch: "Taco_Birria_Crunch.png",
-  taco_birria_ternera: "Taco_Birria_Dipping.png",
-  taco_chili_pollo: "Taco_Chili_de_Pollo.png",
-  taco_chistorra: "Taco_Chistorra.jpg",
-  taco_cochinita: "Taco_de_Cochinita.png",
-  taco_pollo_crujiente: "Taco_de_Pollo_Crujiente.png",
-  taco_pastor: "Taco_Pastor.png",
-  taco_pato_pekin: "Taco_Pato_Pekin.png",
-  taco_pulled_pork: "Taco_Pulled_Pork.png",
-  taco_smash_burger: "Taco_Smash_Burger.png",
-  taco_gambones: "Taco_Tempura_de_Gambones.png",
-  taco_tinga_pollo: "Taco_Tinga_de_Pollo.png",
-  taco_vegano: "Taco_Vegano.png",
-  tarta_nutella: "Tarta_de_Nutella.png",
-  tarta_queso_cajeta: "Tarta_de_Queso.png",
-  cheesecake_pistacho: "Tarta_Pistacho.png",
-  tres_leches: "Tarta_Tres_Leches.png",
-  tequenos_tamarindo: "Tequenos.png",
-  tiras_pollo_crujiente: "Tiras_de_Pollo.png",
+  aros_cebolla: "Aros_de_Cebolla.webp",
+  burrito_cochinita_deluxe: "Burrito_Cochinita_Delux.webp",
+  burrito_cochinita_pibil: "Burrito_Cochinita_Pibil.webp",
+  burrito_costilla_jack: "Burrito_Costilla.webp",
+  burrito_birria: "Burrito_de_Birria.webp",
+  burrito_carnitas_carrillera: "Burrito_de_Carrillera.webp",
+  burrito_chili_pollo: "Burrito_de_Chili_de_Pollo.webp",
+  burrito_pollo_crujiente: "Burrito_de_Pollo_Crujiente.webp",
+  burrito_tinga_pollo: "Burrito_de_Tiga_de_Pollo.webp",
+  burrito_pulled_pork: "Burrito_Pulled_Pork.webp",
+  burrito_vegano: "Burrito_Vegano.webp",
+  chingonachos: "Chingonachos.webp",
+  copa_coco_banana: "Copa_Cajeta.webp",
+  copa_chocolate_blanco_pistacho: "Copa_Chocolate_Blanco_Pistacho.webp",
+  copa_kindermania: "Copa_Kindermania.webp",
+  degustacion_chingona: "Degustacion_Chingona.webp",
+  degustacion_yucateca: "Degustacion_Yukateca.webp",
+  desnudo_carnitas: "Desnudo_Carnitas.webp",
+  desnudo_cochinita: "Desnudo_Cochinita.webp",
+  desnudo_costilla: "Desnudo_Costilla.webp",
+  desnudo_pato: "Desnudo_Pato.webp",
+  desnudo_pollo_crujiente: "Desnudo_Pollo_Crujiente.webp",
+  desnudo_pulled_pork: "Desnudo_Pulled.webp",
+  desnudo_salmon: "Desnudo_Salmon.webp",
+  desnudo_tinga_pollo: "Desnudo_Tinga_de_Pollo.webp",
+  nachos_guacamoles: "Nachos_con_Guacamole.webp",
+  nachos_gratinados_birria: "Nachos_Gratinados_Birria.webp",
+  nachos_kimchi: "Nachos_Kimchi.webp",
+  naxos: "Naxos.webp",
+  nuggets_papas: "Nuggets_con_Papas.webp",
+  patatas_brava_chipotle: "Papas_Bravas.webp",
+  patacones_tinga: "Patacones_Pollo.webp",
+  patacones_salmon: "Patacones_Salmon.webp",
+  polvito_oreoguayo: "Polvito_Oreoguayo.webp",
+  quesadilla_birria: "Quesadilla_Birria.webp",
+  quesadilla_chili_pollo: "Quesadilla_Chili.webp",
+  quesadilla_cochinita: "Quesadilla_Cochinita.webp",
+  quesadilla_gobernador: "Quesadilla_Gobernador.webp",
+  quesadilla_tinga_pollo: "Quesadilla_Tinga_de_Pollo.webp",
+  quesadilla_vegetariana: "Quesadilla_Vegetariana.webp",
+  quesapizza: "Quesapizza.webp",
+  taco_birria_crunch: "Taco_Birria_Crunch.webp",
+  taco_birria_ternera: "Taco_Birria_Dipping.webp",
+  taco_chili_pollo: "Taco_Chili_de_Pollo.webp",
+  taco_chistorra: "Taco_Chistorra.webp",
+  taco_cochinita: "Taco_de_Cochinita.webp",
+  taco_pollo_crujiente: "Taco_de_Pollo_Crujiente.webp",
+  taco_pastor: "Taco_Pastor.webp",
+  taco_pato_pekin: "Taco_Pato_Pekin.webp",
+  taco_pulled_pork: "Taco_Pulled_Pork.webp",
+  taco_smash_burger: "Taco_Smash_Burger.webp",
+  taco_gambones: "Taco_Tempura_de_Gambones.webp",
+  taco_tinga_pollo: "Taco_Tinga_de_Pollo.webp",
+  taco_vegano: "Taco_Vegano.webp",
+  tarta_nutella: "Tarta_de_Nutella.webp",
+  tarta_queso_cajeta: "Tarta_de_Queso.webp",
+  cheesecake_pistacho: "Tarta_Pistacho.webp",
+  tres_leches: "Tarta_Tres_Leches.webp",
+  tequenos_tamarindo: "Tequenos.webp",
+  tiras_pollo_crujiente: "Tiras_de_Pollo.webp",
 };
+
+/**
+ * Helper to get image from filename with fallback for extensions
+ */
+function findImageByFilename(filename) {
+  if (!filename) return null;
+  if (imageByFilename[filename]) return imageByFilename[filename];
+
+  // Try replacing extension with .webp
+  const baseName = filename.substring(0, filename.lastIndexOf("."));
+  if (baseName && imageByFilename[`${baseName}.webp`]) {
+    return imageByFilename[`${baseName}.webp`];
+  }
+  return null;
+}
 
 /**
  * Get image URL for a dish item
@@ -87,18 +102,16 @@ export function getDishImage(item) {
 
   // 1. Direct image property on item if set
   if (item.image) {
-    if (imageByFilename[item.image]) {
-      return imageByFilename[item.image];
-    }
+    const found = findImageByFilename(item.image);
+    if (found) return found;
     return item.image;
   }
 
   // 2. Lookup in explicit dish image map by item ID
   if (item.id && DISH_IMAGE_MAP[item.id]) {
     const filename = DISH_IMAGE_MAP[item.id];
-    if (imageByFilename[filename]) {
-      return imageByFilename[filename];
-    }
+    const found = findImageByFilename(filename);
+    if (found) return found;
   }
 
   // 3. Fallback: normalized search across filenames

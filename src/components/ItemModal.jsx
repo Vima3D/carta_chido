@@ -46,6 +46,8 @@ export default function ItemModal({ item, sectionColor, onClose }) {
               src={dishImage}
               alt={itemName}
               className="modal-dish-img"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         )}
