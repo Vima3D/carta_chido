@@ -1,7 +1,7 @@
-import React from 'react';
-import { Flame, Leaf, Star } from 'lucide-react';
-import { getItemName, getItemDescription } from '../data/menuData';
-import { useLanguage } from '../context/LanguageContext';
+import React from "react";
+import { Flame, Leaf, Star } from "lucide-react";
+import { getItemName, getItemDescription } from "../data/menuData";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function MenuItemCard({ item, sectionColor, onClick }) {
   const { lang, t } = useLanguage();
@@ -12,7 +12,7 @@ export default function MenuItemCard({ item, sectionColor, onClick }) {
   return (
     <div
       className="menu-card"
-      style={{ '--card-accent': sectionColor }}
+      style={{ "--card-accent": sectionColor }}
       onClick={() => onClick(item)}
     >
       <div>
@@ -21,9 +21,9 @@ export default function MenuItemCard({ item, sectionColor, onClick }) {
           <span className="card-price">{item.price}</span>
         </div>
 
-        {itemDescription && (
+        {/* {itemDescription && (
           <p className="card-description">{itemDescription}</p>
-        )}
+        )} */}
       </div>
 
       <div className="card-badges">
@@ -39,13 +39,13 @@ export default function MenuItemCard({ item, sectionColor, onClick }) {
           </span>
         )}
 
-        {item.spicy === 'low' && (
+        {item.spicy === "low" && (
           <span className="badge-tag badge-spicy-low">
             <Flame size={12} color="#CA8A04" /> {t.badgeSpicyLow}
           </span>
         )}
 
-        {item.spicy === 'medium' && (
+        {item.spicy === "medium" && (
           <span className="badge-tag badge-spicy-medium">
             <Flame size={12} color="#EA580C" /> {t.badgeSpicyMedium}
           </span>

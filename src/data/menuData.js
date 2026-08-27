@@ -388,109 +388,109 @@ export const MENU_ITEMS = {
     items: [
       {
         id: "taco_cochinita",
-        name: "Taco de Cochinita Pibil (4 uds)",
+        name: "Taco de Cochinita Pibil",
         price: "9,90 €",
         numericPrice: 9.9,
         description:
-          "Cochinita pibil con crema de chipotle, crema agria y cebolla roja encurtida.",
+          "Cochinita pibil con crema de chipotle, crema agria y cebolla roja encurtida. (4 uds)",
         en: {
-          name: "Cochinita Pibil Tacos (4 pcs)",
+          name: "Cochinita Pibil Tacos",
           description:
-            "Slow-roasted pork with chipotle cream, sour cream, and pickled red onion.",
+            "Slow-roasted pork with chipotle cream, sour cream, and pickled red onion. (4 pcs)",
         },
       },
       {
         id: "taco_pulled_pork",
-        name: "Taco Pulled Pork BBQ (4 uds)",
+        name: "Taco Pulled Pork BBQ",
         price: "9,90 €",
         numericPrice: 9.9,
         description:
-          "Carne de cerdo asada en salsa BBQ a baja temperatura con cebolla crujiente y queso Oaxaca.",
+          "Carne de cerdo asada en salsa BBQ a baja temperatura con cebolla crujiente y queso Oaxaca. (4 uds)",
         en: {
-          name: "Pulled Pork BBQ Tacos (4 pcs)",
+          name: "Pulled Pork BBQ Tacos",
           description:
-            "Slow-cooked BBQ pulled pork with crispy onion and melted Oaxaca cheese.",
+            "Slow-cooked BBQ pulled pork with crispy onion and melted Oaxaca cheese. (4 pcs)",
         },
       },
       {
         id: "taco_gambones",
-        name: "Taco Tempura de Gambones (4 uds)",
+        name: "Taco Tempura de Gambones",
         price: "11,90 €",
         numericPrice: 11.9,
         description:
-          "En cremosa de kimchee, algas wakame, cebolleta china y aros de cebolla crujientes.",
+          "En cremosa de kimchee, algas wakame, cebolleta china y aros de cebolla crujientes. (4 uds)",
         recommended: true,
         en: {
-          name: "King Prawn Tempura Tacos (4 pcs)",
+          name: "King Prawn Tempura Tacos",
           description:
-            "Tempura king prawns with creamy kimchee, wakame seaweed, spring onion, and crispy onion rings.",
+            "Tempura king prawns with creamy kimchee, wakame seaweed, spring onion, and crispy onion rings. (4 pcs)",
         },
       },
       {
         id: "taco_pastor",
-        name: "Taco Pastor (4 uds)",
+        name: "Taco Pastor",
         price: "9,90 €",
         numericPrice: 9.9,
         description:
-          "Carne de cerdo asada en adobo pastor, pico de gallo de piña y salsa pastor.",
+          "Carne de cerdo asada en adobo pastor, pico de gallo de piña y salsa pastor. (4 uds)",
         recommended: true,
         en: {
-          name: "Tacos Al Pastor (4 pcs)",
+          name: "Tacos Al Pastor",
           description:
-            "Marinated roasted pork with pineapple pico de gallo and house pastor salsa.",
+            "Marinated roasted pork with pineapple pico de gallo and house pastor salsa. (4 pcs)",
         },
       },
       {
         id: "taco_chili_pollo",
-        name: "Taco Chili de Pollo (4 uds)",
+        name: "Taco Chili de Pollo",
         price: "9,90 €",
         numericPrice: 9.9,
         description:
-          "Chili de pollo, queso Oaxaca y salsa de chiles tatemados y almendras.",
+          "Chili de pollo, queso Oaxaca y salsa de chiles tatemados y almendras. (4 uds)",
         en: {
-          name: "Chicken Chili Tacos (4 pcs)",
+          name: "Chicken Chili Tacos",
           description:
-            "Chicken chili, Oaxaca cheese, and roasted chili almond sauce.",
+            "Chicken chili, Oaxaca cheese, and roasted chili almond sauce. (4 pcs)",
         },
       },
       {
         id: "taco_birria_ternera",
-        name: "Taco de Birria de Ternera (4 uds)",
+        name: "Taco de Birria de Ternera",
         price: "12,00 €",
         numericPrice: 12.0,
         description:
-          "Birria de ternera con queso Oaxaca, pico de gallo de hierbabuena con salsa de su caldo para mojar.",
+          "Birria de ternera con queso Oaxaca, pico de gallo de hierbabuena con salsa de su caldo para mojar. (4 uds)",
         recommended: true,
         en: {
-          name: "Beef Birria Tacos (4 pcs)",
+          name: "Beef Birria Tacos",
           description:
             "Slow-braised beef birria with Oaxaca cheese, mint pico de gallo, served with consommé dipping broth.",
         },
       },
       {
         id: "taco_pollo_crujiente",
-        name: "Taco de Pollo Crujiente (4 uds)",
+        name: "Taco de Pollo Crujiente",
         price: "10,50 €",
         numericPrice: 10.5,
         description:
-          "Pollo crujiente con salsa yakiniku, crema de aguacate y pico de gallo con piña.",
+          "Pollo crujiente con salsa yakiniku, crema de aguacate y pico de gallo con piña. (4 uds)",
         en: {
-          name: "Crispy Chicken Tacos (4 pcs)",
+          name: "Crispy Chicken Tacos",
           description:
-            "Crispy chicken with yakiniku sauce, avocado cream, and pineapple pico de gallo.",
+            "Crispy chicken with yakiniku sauce, avocado cream, and pineapple pico de gallo. (4 pcs)",
         },
       },
       {
         id: "taco_smash_burger",
-        name: "Smash Taco Burger (4 uds)",
+        name: "Smash Taco Burger",
         price: "10,90 €",
         numericPrice: 10.9,
         description:
-          "Burger smash, bacon, pepinillo, queso Monterey Jack y salsa burger.",
+          "Burger smash, bacon, pepinillo, queso Monterey Jack y salsa burger. (4 uds)",
         en: {
-          name: "Smash Taco Burger (4 pcs)",
+          name: "Smash Taco Burger",
           description:
-            "Smashed beef patty, bacon, pickle, Monterey Jack cheese, and house burger sauce.",
+            "Smashed beef patty, bacon, pickle, Monterey Jack cheese, and house burger sauce. (4 pcs)",
         },
       },
       {
@@ -521,68 +521,69 @@ export const MENU_ITEMS = {
       },
       {
         id: "taco_chistorra",
-        name: "Taco Chistorra a la Navarra (4 uds)",
+        name: "Taco Chistorra a la Navarra",
         price: "8,90 €",
         numericPrice: 8.9,
-        description: "Chistorra, queso de cabra, cebolla caramelizada y miel.",
+        description:
+          "Chistorra, queso de cabra, cebolla caramelizada y miel. (4 uds)",
         en: {
-          name: "Navarra Sausage Tacos (4 pcs)",
+          name: "Navarra Sausage Tacos",
           description:
-            "Navarra chistorra sausage, goat cheese, caramelized onion, and honey.",
+            "Navarra chistorra sausage, goat cheese, caramelized onion, and honey. (4 pcs)",
         },
       },
       {
         id: "taco_vegano",
-        name: "Taco Vegano (4 uds)",
+        name: "Taco Vegano",
         price: "10,50 €",
         numericPrice: 10.5,
         description:
-          "Tofu marinado en achiote a la plancha con salsa cremosa de cacahuate y chiles tatemados, y pico de gallo.",
+          "Tofu marinado en achiote a la plancha con salsa cremosa de cacahuate y chiles tatemados, y pico de gallo. (4 uds)",
         vegetarian: true,
         spicy: "low",
         en: {
-          name: "Vegan Tacos (4 pcs)",
+          name: "Vegan Tacos",
           description:
-            "Grilled achiote-marinated tofu with creamy peanut roasted chili sauce and pico de gallo.",
+            "Grilled achiote-marinated tofu with creamy peanut roasted chili sauce and pico de gallo. (4 pcs)",
         },
       },
       {
         id: "taco_tinga_pollo",
-        name: "Taco de Tinga de Pollo (4 uds)",
+        name: "Taco de Tinga de Pollo",
         price: "9,90 €",
         numericPrice: 9.9,
         description:
-          "Tinga de pollo con guacamole, pico de gallo y crema agria.",
+          "Tinga de pollo con guacamole, pico de gallo y crema agria. (4 pcs)",
         en: {
-          name: "Chicken Tinga Tacos (4 pcs)",
+          name: "Chicken Tinga Tacos",
           description:
-            "Shredded chicken tinga with guacamole, pico de gallo, and sour cream.",
+            "Shredded chicken tinga with guacamole, pico de gallo, and sour cream. (4 pcs)",
         },
       },
       {
         id: "taco_birria_crunch",
-        name: 'Taco Birria de Res "Crunch" (4 uds)',
+        name: 'Taco Birria de Res "Crunch" ',
         price: "12,90 €",
         numericPrice: 12.9,
         description:
-          "Birria de ternera con cremosa de chipotle, queso curado de oveja y papas paja.",
+          "Birria de ternera con cremosa de chipotle, queso curado de oveja y papas paja. (4 uds)",
         en: {
-          name: 'Beef Birria "Crunch" Tacos (4 pcs)',
+          name: 'Beef Birria "Crunch" Tacos',
           description:
-            "Beef birria with creamy chipotle, cured sheep cheese, and crispy potato sticks.",
+            "Beef birria with creamy chipotle, cured sheep cheese, and crispy potato sticks. (4 pcs)",
         },
       },
       {
         id: "taco_pato_pekin",
-        name: "Taco Pato Pekín (4 uds)",
+        name: "Taco Pato Pekín",
         price: "14,50 €",
         numericPrice: 14.5,
         description:
-          "Pato confitado, lechuga romana, cebolleta china, cebolla caramelizada y salsa hoisin.",
+          "Pato confitado, lechuga romana, cebolleta china, cebolla caramelizada y salsa hoisin. (4 uds)",
         en: {
-          name: "Peking Duck Tacos (4 pcs)",
+          name: "Peking Duck Tacos",
           description:
-            "Confit duck, romaine lettuce, spring onion, caramelized onion, and hoisin sauce.",
+            "Confit duck, romaine lettuce, spring onion, caramelized onion, and hoisin sauce. (4 pcs)",
         },
       },
       {
