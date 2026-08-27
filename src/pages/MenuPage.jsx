@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Header from "../components/Header";
 import TopNavFood from "../components/TopNavFood";
 import BottomNavDrink from "../components/BottomNavDrink";
@@ -7,6 +7,7 @@ import ItemModal from "../components/ItemModal";
 import ScrollToTop from "../components/ScrollToTop";
 import OrderFloatingButton from "../components/OrderFloatingButton";
 import OrderListModal from "../components/OrderListModal";
+import { preloadAllDishImages } from "../utils/dishImages";
 
 import {
   FOOD_CATEGORIES,
@@ -26,6 +27,10 @@ export default function MenuPage() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [selectedItem, setSelectedItem] = useState(null);
   const [isOrderListOpen, setIsOrderListOpen] = useState(false);
+
+  useEffect(() => {
+    preloadAllDishImages();
+  }, []);
 
   const sectionRefs = useRef({});
 

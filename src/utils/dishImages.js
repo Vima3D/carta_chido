@@ -137,3 +137,52 @@ export function getDishImage(item) {
 
   return null;
 }
+
+/**
+ * Preload an image URL into browser memory/cache
+ */
+const preloadedUrls = new Set();
+
+export function preloadImageUrl(url) {
+  if (!url || preloadedUrls.has(url)) return;
+  preloadedUrls.add(url);
+  const img = new Image();
+  img.src = url;
+}
+
+/**
+ * Preload a single dish item image
+ */
+export function preloadDishImage(item) {
+  const url = getDishImage(item);
+  if (url) preloadImageUrl(url);
+}
+
+/**
+ * Preload all dish images asynchronously in background idle time
+ */
+export function preloadAllDishImages() {
+  const urls = Object.values(imageByFilename);
+  
+  const loadBatch = (index) => {
+    if (index >= urls.length) return;
+    const batchSize = 6;
+    for (let i = index; i < Math.min(index + batchSize, urls.length); i++) {
+      preloadImageUrl(urls[i]);
+    }
+    if (index + batchSize < urls.length) {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(() => loadBatch(index + batchSize));
+      } else {
+        setTimeout(() => loadBatch(index + batchSize), 40);
+      }
+    }
+  };
+
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(() => loadBatch(0));
+  } else {
+    setTimeout(() => loadBatch(0), 100);
+  }
+}
+

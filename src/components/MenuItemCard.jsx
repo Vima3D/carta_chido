@@ -3,6 +3,7 @@ import { Flame, Leaf, Star, Plus, Minus } from "lucide-react";
 import { getItemName } from "../data/menuData";
 import { useLanguage } from "../context/LanguageContext";
 import { useOrder } from "../context/OrderContext";
+import { preloadDishImage } from "../utils/dishImages";
 
 export default function MenuItemCard({ item, sectionColor, onClick }) {
   const { lang, t } = useLanguage();
@@ -10,6 +11,10 @@ export default function MenuItemCard({ item, sectionColor, onClick }) {
 
   const itemName = getItemName(item, lang);
   const quantity = getItemQuantity(item.id);
+
+  const handleMouseEnter = () => {
+    preloadDishImage(item);
+  };
 
   const handleAdd = (e) => {
     e.stopPropagation();
@@ -31,6 +36,8 @@ export default function MenuItemCard({ item, sectionColor, onClick }) {
       className={`menu-card ${quantity > 0 ? "is-selected" : ""}`}
       style={{ "--card-accent": sectionColor }}
       onClick={() => onClick(item)}
+      onMouseEnter={handleMouseEnter}
+      onTouchStart={handleMouseEnter}
     >
       <div>
         <div className="card-header">
