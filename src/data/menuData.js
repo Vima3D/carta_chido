@@ -1379,14 +1379,6 @@ export const MENU_ITEMS = {
     en: {
       title: "SOFT DRINKS & SANGRIA",
       subtitle: "Refreshing drinks and sharing pitchers for your table",
-      options: [
-        { name: "Pepsi", price: "2,50 €" },
-        { name: "Pepsi Zero", price: "2,50 €" },
-        { name: "Schweppes Lemon", price: "2,50 €" },
-        { name: "Schweppes Orange", price: "2,50 €" },
-        { name: "Seven Up", price: "2,50 €" },
-        { name: "Tonic Water", price: "2,90 €" },
-      ],
     },
     items: [
       {
@@ -1397,29 +1389,46 @@ export const MENU_ITEMS = {
         en: { name: "Still / Sparkling Mineral Water" },
       },
       {
-        id: "refrescos_clasicos",
-        name: "Refrescos clásicos",
+        id: "pepsi",
+        name: "Pepsi",
         price: "2,50 €",
         numericPrice: 2.5,
-        en: {
-          name: "Classic Soft Drinks",
-          options: [
-            { name: "Pepsi", price: "2,50 €" },
-            { name: "Pepsi Zero", price: "2,50 €" },
-            { name: "Schweppes Lemon", price: "2,50 €" },
-            { name: "Schweppes Orange", price: "2,50 €" },
-            { name: "Seven Up", price: "2,50 €" },
-            { name: "Tonic Water", price: "2,50 €" },
-          ],
-        },
-        options: [
-          { name: "Pepsi", price: "2,50 €" },
-          { name: "Pepsi Zero", price: "2,50 €" },
-          { name: "Schwippes de Limón", price: "2,50 €" },
-          { name: "Schwippes de Naranja", price: "2,50 €" },
-          { name: "Seven Up", price: "2,50 €" },
-          { name: "Tónica", price: "2,90 €" },
-        ],
+        en: { name: "Pepsi" },
+      },
+      {
+        id: "pepsi_zero",
+        name: "Pepsi Zero",
+        price: "2,50 €",
+        numericPrice: 2.5,
+        en: { name: "Pepsi Zero" },
+      },
+      {
+        id: "schweppes_limon",
+        name: "Schweppes Limón",
+        price: "2,50 €",
+        numericPrice: 2.5,
+        en: { name: "Schweppes Lemon" },
+      },
+      {
+        id: "schweppes_naranja",
+        name: "Schweppes Naranja",
+        price: "2,50 €",
+        numericPrice: 2.5,
+        en: { name: "Schweppes Orange" },
+      },
+      {
+        id: "seven_up",
+        name: "Seven Up",
+        price: "2,50 €",
+        numericPrice: 2.5,
+        en: { name: "Seven Up" },
+      },
+      {
+        id: "tonica",
+        name: "Tónica",
+        price: "2,90 €",
+        numericPrice: 2.9,
+        en: { name: "Tonic Water" },
       },
       {
         id: "lipton_melocoton",
