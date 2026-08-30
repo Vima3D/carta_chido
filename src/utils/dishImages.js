@@ -66,6 +66,7 @@ const DISH_IMAGE_MAP = {
   taco_pato_pekin: "Taco_Pato_Pekin.webp",
   taco_pulled_pork: "Taco_Pulled_Pork.webp",
   taco_smash_burger: "Taco_Smash_Burger.webp",
+  taco_brioche_bourbon: "Taco_Brioche_Costilla_Bourbon.webp",
   taco_gambones: "Taco_Tempura_de_Gambones.webp",
   taco_tinga_pollo: "Taco_Tinga_de_Pollo.webp",
   taco_vegano: "Taco_Vegano.webp",
@@ -126,7 +127,9 @@ export function getDishImage(item) {
   const itemNameNorm = normalize(item.name);
 
   for (const filename in imageByFilename) {
-    const nameWithoutExtNorm = normalize(filename.substring(0, filename.lastIndexOf(".")));
+    const nameWithoutExtNorm = normalize(
+      filename.substring(0, filename.lastIndexOf(".")),
+    );
     if (
       (itemIdNorm && nameWithoutExtNorm === itemIdNorm) ||
       (itemNameNorm && nameWithoutExtNorm === itemNameNorm)
@@ -163,7 +166,7 @@ export function preloadDishImage(item) {
  */
 export function preloadAllDishImages() {
   const urls = Object.values(imageByFilename);
-  
+
   const loadBatch = (index) => {
     if (index >= urls.length) return;
     const batchSize = 6;
@@ -185,4 +188,3 @@ export function preloadAllDishImages() {
     setTimeout(() => loadBatch(0), 100);
   }
 }
-
