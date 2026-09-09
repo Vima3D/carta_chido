@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { X, Trash2, Plus, Minus, ClipboardList, Eye, GripVertical } from "lucide-react";
+import React from "react";
+import { X, Trash2, Plus, Minus, ClipboardList, Eye } from "lucide-react";
 import { useOrder } from "../context/OrderContext";
 import { useLanguage } from "../context/LanguageContext";
 import { findMenuItemById } from "../data/menuData";
@@ -10,18 +10,11 @@ export default function OrderListModal({ isOpen, onClose, onSelectItem }) {
     updateQuantity,
     removeFromOrder,
     clearOrder,
-    reorderOrderList,
     totalEstimatedPrice,
     totalItemsCount,
     formatPrice,
   } = useOrder();
   const { lang, t } = useLanguage();
-
-  const [draggedIdx, setDraggedIdx] = useState(null);
-  const [dragOverIdx, setDragOverIdx] = useState(null);
-
-  const touchDraggedIdxRef = useRef(null);
-  const touchDragOverIdxRef = useRef(null);
 
   if (!isOpen) return null;
 
@@ -36,86 +29,6 @@ export default function OrderListModal({ isOpen, onClose, onSelectItem }) {
     if (onSelectItem) {
       onSelectItem(fullItem);
     }
-  };
-
-  // Drag & Drop handlers (Desktop HTML5)
-  const handleDragStart = (e, index) => {
-    setDraggedIdx(index);
-    e.dataTransfer.effectAllowed = "move";
-  };
-
-  const handleDragOver = (e, index) => {
-    e.preventDefault();
-    if (dragOverIdx !== index) {
-      setDragOverIdx(index);
-    }
-  };
-
-  const handleDrop = (e, index) => {
-    e.preventDefault();
-    if (draggedIdx !== null && draggedIdx !== index) {
-      reorderOrderList(draggedIdx, index);
-    }
-    setDraggedIdx(null);
-    setDragOverIdx(null);
-  };
-
-  const handleDragEnd = () => {
-    setDraggedIdx(null);
-    setDragOverIdx(null);
-  };
-
-  // Touch Handlers for Mobile Drag & Drop
-  const handleTouchStart = (e, index) => {
-    touchDraggedIdxRef.current = index;
-    touchDragOverIdxRef.current = index;
-    setDraggedIdx(index);
-    setDragOverIdx(index);
-  };
-
-  const handleTouchMove = (e) => {
-    if (touchDraggedIdxRef.current === null) return;
-    if (e.cancelable) {
-      e.preventDefault();
-    }
-    const touch = e.touches[0];
-    if (!touch) return;
-
-    const targetElem = document.elementFromPoint(touch.clientX, touch.clientY);
-    const rowElem = targetElem?.closest(".order-item-row");
-
-    if (rowElem && rowElem.dataset && rowElem.dataset.index !== undefined) {
-      const hoverIndex = parseInt(rowElem.dataset.index, 10);
-      if (!isNaN(hoverIndex) && touchDragOverIdxRef.current !== hoverIndex) {
-        touchDragOverIdxRef.current = hoverIndex;
-        setDragOverIdx(hoverIndex);
-      }
-    }
-
-    const container = document.querySelector(".order-modal-body");
-    if (container) {
-      const rect = container.getBoundingClientRect();
-      const edgeThreshold = 40;
-      if (touch.clientY < rect.top + edgeThreshold) {
-        container.scrollTop -= 8;
-      } else if (touch.clientY > rect.bottom - edgeThreshold) {
-        container.scrollTop += 8;
-      }
-    }
-  };
-
-  const handleTouchEnd = () => {
-    const fromIdx = touchDraggedIdxRef.current;
-    const toIdx = touchDragOverIdxRef.current;
-
-    if (fromIdx !== null && toIdx !== null && fromIdx !== toIdx) {
-      reorderOrderList(fromIdx, toIdx);
-    }
-
-    touchDraggedIdxRef.current = null;
-    touchDragOverIdxRef.current = null;
-    setDraggedIdx(null);
-    setDragOverIdx(null);
   };
 
   return (
@@ -152,34 +65,13 @@ export default function OrderListModal({ isOpen, onClose, onSelectItem }) {
               <div className="order-items-list">
                 {orderList.map((item, index) => {
                   const itemName = lang === "en" && item.en?.name ? item.en.name : item.name;
-                  const isDragging = draggedIdx === index;
-                  const isDragOver = dragOverIdx === index;
 
                   return (
                     <div
                       key={item.id}
                       data-index={index}
-                      className={`order-item-row ${isDragging ? "is-dragging" : ""} ${
-                        isDragOver ? "is-drag-over" : ""
-                      }`}
-                      onDragOver={(e) => handleDragOver(e, index)}
-                      onDrop={(e) => handleDrop(e, index)}
+                      className="order-item-row"
                     >
-                      {/* DRAG HANDLE */}
-                      <div
-                        className="drag-handle"
-                        title="Arrastra para cambiar de orden"
-                        aria-label="Reordenar plato"
-                        draggable
-                        onDragStart={(e) => handleDragStart(e, index)}
-                        onDragEnd={handleDragEnd}
-                        onTouchStart={(e) => handleTouchStart(e, index)}
-                        onTouchMove={handleTouchMove}
-                        onTouchEnd={handleTouchEnd}
-                        onTouchCancel={handleTouchEnd}
-                      >
-                        <GripVertical size={20} />
-                      </div>
 
                       {/* ITEM DETAILS - MAXIMUM SPACE FOR NAME */}
                       <div

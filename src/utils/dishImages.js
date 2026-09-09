@@ -66,6 +66,7 @@ const DISH_IMAGE_MAP = {
   taco_pato_pekin: "Taco_Pato_Pekin.webp",
   taco_pulled_pork: "Taco_Pulled_Pork.webp",
   taco_smash_burger: "Taco_Smash_Burger.webp",
+  taco_brioche_costilla: "Taco_Brioche_Costilla.webp",
   taco_brioche_bourbon: "Taco_Brioche_Costilla_Bourbon.webp",
   taco_gambones: "Taco_Tempura_de_Gambones.webp",
   taco_tinga_pollo: "Taco_Tinga_de_Pollo.webp",
