@@ -42,6 +42,8 @@ export const uiTranslations = {
     sortPriceHigh: "Precio: Mayor a Menor",
     moveUp: "Mover arriba",
     moveDown: "Mover abajo",
+    viewDetails: "Ver foto y detalles",
+    hintClickItem: "💡 Toca o haz clic en cualquier plato para ver su foto y detalles.",
   },
   en: {
     searchPlaceholder: "Search tacos, nachos, cocktails, birria...",
@@ -82,6 +84,8 @@ export const uiTranslations = {
     sortPriceHigh: "Price: High to Low",
     moveUp: "Move up",
     moveDown: "Move down",
+    viewDetails: "View photo & details",
+    hintClickItem: "💡 Tap or click any item to view its photo and full details.",
   },
 };
 

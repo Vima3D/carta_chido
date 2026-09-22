@@ -1078,19 +1078,6 @@ export const MENU_ITEMS = {
             "Double scoop dulce de leche ice cream, cajeta, crushed Lotus biscoff, and whipped cream.",
         },
       },
-      {
-        id: "copa_chocolate_blanco_pistacho",
-        name: "Copa Chocolate Blanco con Pistacho",
-        price: "6,50 €",
-        numericPrice: 6.5,
-        description:
-          "Doble bola de helado de Chocolate Blanco, nata montada y pistacho.",
-        en: {
-          name: "White Chocolate & Pistachio Sundae",
-          description:
-            "Double scoop white chocolate ice cream, whipped cream, and real pistachios.",
-        },
-      },
     ],
   },
 

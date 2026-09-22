@@ -1,9 +1,9 @@
 import React from "react";
-import { Flame, Leaf, Star, Plus, Minus } from "lucide-react";
+import { Flame, Leaf, Star, Plus, Minus, Eye } from "lucide-react";
 import { getItemName } from "../data/menuData";
 import { useLanguage } from "../context/LanguageContext";
 import { useOrder } from "../context/OrderContext";
-import { preloadDishImage } from "../utils/dishImages";
+import { getDishImage, preloadDishImage } from "../utils/dishImages";
 
 export default function MenuItemCard({ item, sectionColor, onClick }) {
   const { lang, t } = useLanguage();
@@ -11,6 +11,7 @@ export default function MenuItemCard({ item, sectionColor, onClick }) {
 
   const itemName = getItemName(item, lang);
   const quantity = getItemQuantity(item.id);
+  const hasImage = Boolean(getDishImage(item));
 
   const handleMouseEnter = () => {
     preloadDishImage(item);
@@ -41,7 +42,14 @@ export default function MenuItemCard({ item, sectionColor, onClick }) {
     >
       <div>
         <div className="card-header">
-          <h4 className="card-title">{itemName}</h4>
+          <div className="card-title-group">
+            <h4 className="card-title">{itemName}</h4>
+            {hasImage && (
+              <span className="card-detail-hint" title={t.viewDetails}>
+                <Eye size={13} /> {t.viewDetails}
+              </span>
+            )}
+          </div>
           <span className="card-price">{item.price}</span>
         </div>
 

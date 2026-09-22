@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Flame, Leaf, Star, X, Globe } from 'lucide-react';
+import { Search, Flame, Leaf, Star, X, Globe, Eye } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Header({
@@ -93,6 +93,11 @@ export default function Header({
             <Flame size={14} color={activeFilter === 'spicy' ? '#FFF' : '#EA580C'} />
             {t.filterSpicy}
           </button>
+        </div>
+
+        <div className="menu-info-banner">
+          <Eye size={15} className="info-banner-icon" />
+          <span>{t.hintClickItem}</span>
         </div>
       </div>
     </header>

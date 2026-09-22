@@ -298,6 +298,34 @@ body {
   box-shadow: 0 2px 6px rgba(212, 56, 40, 0.3);
 }
 
+/* MENU INFO BANNER */
+.menu-info-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(232, 154, 35, 0.12), rgba(212, 56, 40, 0.08));
+  border: 1px solid rgba(232, 154, 35, 0.35);
+  border-radius: 14px;
+  padding: 8px 14px;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.info-banner-icon {
+  color: var(--chido-red);
+  flex-shrink: 0;
+  animation: pulse-eye 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse-eye {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
 /* BADGE LEGEND MODAL OR BAR */
 .badge-legend {
   display: flex;
@@ -586,12 +614,46 @@ body {
   margin-bottom: 8px;
 }
 
+.card-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  flex: 1;
+}
+
 .card-title {
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 800;
   color: var(--text-dark);
   line-height: 1.25;
+}
+
+.card-detail-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--chido-red);
+  background: rgba(212, 56, 40, 0.07);
+  border: 1px dashed rgba(212, 56, 40, 0.35);
+  padding: 3px 9px;
+  border-radius: 12px;
+  width: fit-content;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  line-height: 1;
+}
+
+.menu-card:hover .card-detail-hint {
+  background: var(--chido-red);
+  color: #ffffff;
+  border-style: solid;
+  border-color: var(--chido-red);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(212, 56, 40, 0.25);
 }
 
 .card-price {
